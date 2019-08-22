@@ -24,7 +24,7 @@ def sel_sort(arr):
 
 
 arr = []
-n = 50000
+n = 3000
 for i in range(n):
 	arr.append(random.randint(0, 100))
 arr1 = arr
