@@ -14,3 +14,11 @@ def kthsmall(arr, k):
 l = list(map(int, input("Enter the list of numbers ").split()))
 k = int(input("Enter the value of k"))
 print(kthsmall(l, k))
+
+
+'''
+output
+Enter the list of numbers 43 54 23 56 76
+Enter the value of k3
+54
+'''
