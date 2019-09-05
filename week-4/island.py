@@ -4,7 +4,12 @@ colNbr = [-1,0,1,-1,1,-1,0,1]
 
 
 def isSafe(adj_mat, row, col, visited_mat, n):
-	return row>=0 and row<=n and col>=0 and col<=n and adj_mat[row][col] and not visited_mat[row][col]
+	#return row>=0 and row<=n and col>=0 and col<=n and adj_mat[row][col] and not visited_mat[row][col]
+	if row>=0 and row<n and col>=0 and col<n:
+		if adj_mat[row][col] == 1 and not visited_mat[row][col]:
+			return True
+	else:
+		return False	
 
 def dfs(adj_mat, i, j, visited_mat, n):
 	global rowNbr
