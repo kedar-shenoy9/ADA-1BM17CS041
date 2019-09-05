@@ -40,3 +40,16 @@ if __name__ == "__main__":
 				dfs(adj_mat, i, j, visited_mat, n)
 				island_count += 1
 	print(island_count)			
+
+'''
+output:
+
+Enter the number of vertices 5
+Enter the elements of adjancey matrix (one row in one line)
+1 0 0 1 0
+0 0 1 0 0
+0 1 1 1 0
+0 1 0 1 0
+0 0 0 0 0
+2
+'''
