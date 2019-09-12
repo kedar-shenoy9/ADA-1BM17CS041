@@ -25,12 +25,14 @@ if __name__ == "__main__":
 	for i in range(num_nodes):
 		l = list(map(int, input().split()))
 		adj_mat.append(l)
+	start = int(input("Enter the start node "))
 	
 	print("\n")
 	#call the bfs on the unvisited node
-	for i in range(num_nodes):
-		if not visited[i]:
-			bfs(i, visited, adj_mat, num_nodes)
+	#for i in range(num_nodes):
+		#if not visited[i]:
+			#bfs(i, visited, adj_mat, num_nodes)
+	bfs(start, visited, adj_mat, num_nodes)
 
 	print("\n")
 
