@@ -17,34 +17,59 @@ def heapify(heap, index):
             low = r
 
     if low != index:
+        temp = heap[low]
         heap[low] = heap[index]
-        heap[index] = heap[low]
+        heap[index] = temp
         heapify(heap, low)
 
-
 def findMinRange(l, n):
-    myRange = float('inf')
-    minimum = float('inf')
-    maximum = float('-inf')
+    my_range = float("inf")
+    minimum = float("inf")
+    maximum = float("-inf")
+    start = -1
+    end = -1
+
+    #create a heap with first elements of all the lists
     heap = []
-    #creating the heap
-    for i in range(len(n)):
-        t = Node(l[i][0], i, 1)
-        heap.append(t)
+    for i in range(n):
+        temp = Node(l[i][0], i, 1)
+        heap.append(temp)
         if l[i][0] > maximum:
             maximum = l[i][0]
 
-    #heapify the l array
-    i = (len(l)//2)-1
+    #heapify it
+    i = (n//2)-1
     while i>=0:
-        heapify(l, i)
+        heapify(heap, i)
         i -= 1
 
-    minimum = heap[0]
-    #now we have both minimum and maximum
+    #continue until you reach the last element in any list
     while True:
-        #check for the range 
-        if maximum-miin
+        print('blah')
+        minimum = heap[0].data
+        if maximum-minimum+1 < my_range:
+            my_range = maximum-minimum+1
+            start = minimum
+            end = maximum
+
+        #replace the root of the heap with the next element of the same list
+        if heap[0].j < len(l[0]):
+            heap[0].data = l[heap[0].i][heap[0].j]
+            heap[0].j += 1
+            if heap[0].data > maximum:
+                maximum = heap[0].data
+
+        else:
+            break
+    
+        #heapify again
+        i = (n//2)-1
+        while i>=0:
+            heapify(heap, i)
+            i -= 1
+
+    print(f"The range is {minimum} to {maximum}")
+
 
 
 if __name__ == "__main__":
